@@ -16,7 +16,7 @@ def employee_form(request):
         if form.is_valid():
             form.save()
             return redirect('employeelist')
-    return render(request, 'employeeform.html', {'form': form}) 
+   
 
 
    

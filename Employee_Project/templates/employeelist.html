@@ -2,5 +2,30 @@
 
 
 {% block content%}
-{{ employee_list }}
+
+<table class = 'table table-border less'>
+<thead class = 'border-button font-weight-bold'>
+    <tr>
+        <td>Full Name</td>
+        <td>Mobile</td>
+        <td>Position</td>
+        <td>
+            <a href ='' class ='btn btn-success btn-block btn-lg'>ADD</a> 
+        </td>
+    </tr>
+</thead>
+<tbody>
+    {% for employee in employeelist %}
+    <tr>
+        <td>{{employee.full_name}}</td>
+        <td>{{employee.mobile}}</td>
+        <td>{{employee.position}}</td>
+        <td>
+            <a href ='' class ='btn btn-primary px-0'>EDIT</a> 
+        </td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
 {% endblock %}
