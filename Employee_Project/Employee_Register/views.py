@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect,reverse
 from .forms import*
 from .models import Employee
 
@@ -10,12 +10,12 @@ def employee_list(request):
 def employee_form(request):
     if request.method == 'GET':
         form = EmployeeForm()
-        return render(request,'employeeform.html',{'form':form})  
+        return render(request, 'employeeform.html', {'form': form})  
     else:
         form = EmployeeForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('employeelist')
+            return redirect(reverse('employeelist'))
    
 
 
